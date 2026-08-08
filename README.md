@@ -15,7 +15,7 @@ The agent receives the direction command (left / straight / right) as part of it
 **How to run**
 ```bash
 pip install highway-env stable-baselines3 gymnasium pygame numpy==1.26.4
-python intersection_agent.py
+python project_autonomous_car.py
 ```
 
 Then enter a direction when prompted: `left`, `straight`, or `right`. The agent will train and then open a window showing the car navigating the intersection.
