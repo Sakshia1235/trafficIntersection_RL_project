@@ -14,7 +14,7 @@ The agent receives the direction command (left / straight / right) as part of it
 
 **Performance**
 
-The agent was trained for 10,000 timesteps on CPU using PPO. Performance was measured by running 3 demo episodes after training and recording the total reward per episode and whether the agent crashed.
+The agent was trained for 10,000 timesteps on CPU using PPO. Performance was measured by running 3 demo episodes with a length of 10 steps after training and recording the total reward per episode and whether the agent crashed.
 
 Results after training:
 
@@ -22,7 +22,7 @@ Episode 1: reward = 0.55 — OK
 Episode 2: reward = 9.47 — OK
 Episode 3: reward = 3.60 — OK
 
-2 out of 3 episodes consistently achieved positive rewards with no crashes, showing the agent learned basic collision avoidance and intersection navigation. Reward was used as the primary performance metric — higher reward means the agent survived longer, moved at a reasonable speed, and followed the commanded direction more accurately
+2 out of 3 episodes consistently achieved positive rewards with no crashes, showing the agent learned basic collision avoidance and intersection navigation. Reward was used as the primary performance metric higher reward means the agent survived longer, moved at a reasonable speed, and followed the commanded direction more accurately
 
 **How to run**
 ```bash
