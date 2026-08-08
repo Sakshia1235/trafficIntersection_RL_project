@@ -1,7 +1,7 @@
 
 # Commanded Intersection RL Agent
 
-A reinforcement learning agent trained to navigate a traffic intersection based on user-given direction commands (left, straight, or right).
+The aim of this project is to build an autonomous vehicle agent that can navigate a traffic intersection by following real-time direction commands from a user, while safely handling other vehicles in the environment.
 
 **What is Stable Baselines3?**
 Stable Baselines3 (SB3) is a Python library that provides reliable, well-tested implementations of popular reinforcement learning algorithms. This project uses PPO (Proximal Policy Optimization) — an algorithm that trains the agent by having it repeatedly attempt the task, then updating its decision-making based on what worked and what didn't. SB3 handles all the complex training machinery so the focus can stay on the environment and reward design.
@@ -11,6 +11,18 @@ highway-env is a collection of miniature driving environments built for autonomo
 
 **How it works**
 The agent receives the direction command (left / straight / right) as part of its observation alongside the positions and speeds of surrounding vehicles. It is rewarded for moving in the commanded direction, penalised for crashing, and cut off early via a `break_var` mechanism if it ignores the command for too long.
+
+**Performance**
+
+The agent was trained for 10,000 timesteps on CPU using PPO. Performance was measured by running 3 demo episodes after training and recording the total reward per episode and whether the agent crashed.
+
+Results after training:
+
+Episode 1: reward = 0.55 — OK
+Episode 2: reward = 9.47 — OK
+Episode 3: reward = 3.60 — OK
+
+2 out of 3 episodes consistently achieved positive rewards with no crashes, showing the agent learned basic collision avoidance and intersection navigation. Reward was used as the primary performance metric — higher reward means the agent survived longer, moved at a reasonable speed, and followed the commanded direction more accurately
 
 **How to run**
 ```bash
